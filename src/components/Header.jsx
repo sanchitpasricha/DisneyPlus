@@ -7,11 +7,34 @@ const Header = (props) => {
                 <img src="/images/logo.svg" alt="Disney+" />
             </Logo>
             <Navmenu>
+
                 <a href="/home">
                     <img src="/images/home-icon.svg" alt="home"/>
+                    <span>Menu</span>
                 </a>
-                <span>Menu</span>
+                <a href="/search">
+                    <img src="/images/search-icon.svg" alt="home"/>
+                    <span>Search</span>
+                </a>
+                <a href="/watchlist">
+                    <img src="/images/watchlist-icon.svg" alt="home"/>
+                    <span>watchlist</span>
+                </a>
+                <a href="/orignals">
+                    <img src="/images/original-icon.svg" alt="home"/>
+                    <span>Orignals</span>
+                </a>
+                <a href="/movies">
+                    <img src="/images/movie-icon.svg" alt="home"/>
+                    <span>Movies</span>
+                </a>
+                <a href="/series">
+                    <img src="/images/series-icon.svg" alt="home"/>
+                    <span>Series</span>
+                </a>
+                
             </Navmenu>
+            <Login/>
         </Navbar>
     )
 }
@@ -22,7 +45,7 @@ const Logo = styled.a`
     font-size: 0px;
     max-height: 70px;
     display: inline-block;
-    img{
+    img{ 
         display: block;
         width: 100%;
     }
@@ -55,9 +78,55 @@ const Navmenu = styled.div`
     margin-right: auto;
     margin-left: 25px;
 
-    @media (max-width: 768px){
+    a{
+        display: flex;
+        align-items: center; 
+        padding: 0 12px;
+
+        img{
+            height: 25px;
+            min-width: 20px;
+            width: 20px;
+            z-index: auto;
+        }
+
+        span{
+            color: white;
+            display: inline-block;
+            font-size: 12px;
+            position: relative;
+            white-space: nowrap;
+            padding: 0px 2px;
+            text-transform: uppercase;
+        
+        
+            &:after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background-color: white;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            &:hover:after{
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        }
+    }
+
+    @media (max-width: 820px){
         display: none;
     }
+`;
+
+const Login = styled.a`
+
 `;
 
 export default Header;
