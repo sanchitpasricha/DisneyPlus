@@ -34,7 +34,7 @@ const Header = (props) => {
                 </a>
                 
             </Navmenu>
-            <Login/>
+            <Login>Login</Login>
         </Navbar>
     )
 }
@@ -126,7 +126,18 @@ const Navmenu = styled.div`
 `;
 
 const Login = styled.a`
+    background-color: rgba(0,0,0,0,0.6);
+    padding: 8px 16px;
+    text-transform: uppercase;
+    border: 1px solid white;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
 
+    &:hover{
+        background-color: white;
+        color: black;
+        border-color: transparent;
+    }
 `;
 
 export default Header;
